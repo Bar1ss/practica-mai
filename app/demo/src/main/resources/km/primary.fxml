@@ -65,7 +65,7 @@
          </children>
       </HBox>
       <HBox alignment="BOTTOM_RIGHT" />
-      <ImageView id="Setting-1" accessibleRole="BUTTON" fitHeight="41.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+      <ImageView id="Setting-1" accessibleRole="BUTTON" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" smooth="false">
          <image>
             <Image url="@../../picturies/Setting.png" />
          </image>
