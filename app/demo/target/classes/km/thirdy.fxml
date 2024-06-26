@@ -7,7 +7,7 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="km.Controller">
     <children>
-        <Label text="AAAAAAAA" />
+        <Label text="3" />
       <Button fx:id="primaryButton" text="one" onAction="#switchToPrimary"/>
       <Button fx:id="secondaryButton" text="two" onAction="#switchToSecondary"/>
       <Button fx:id="thirdyButton" text="sri" onAction="#switchToThirdy"/>
