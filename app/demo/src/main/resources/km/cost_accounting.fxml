@@ -20,9 +20,7 @@
    <children>
       <ButtonBar accessibleRole="TEXT">
          <buttons>
-            <Button fx:id="secondaryButton" text="Настройки" contentDisplay="CENTER" onAction="#switchToThirdy"
-            mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;"
-            styleClass="Color"  textAlignment="CENTER" textFill="#731196">
+            <Button fx:id="secondaryButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToThirdy" prefHeight="41.0" prefWidth="120.0" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;" text="Настройки" textAlignment="CENTER" textFill="#731196">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -37,15 +35,15 @@
                </padding>
             </Button>
             <ImageView id="Setting-1" accessibleRole="BUTTON" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-               <image>
-                  <Image url="@../../picturies/Setting.png" />
-               </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <viewport>
                   <Rectangle2D />
                </viewport>
+               <image>
+                  <Image url="@../../../picturies/Setting.png" />
+               </image>
             </ImageView>
          </buttons>
       </ButtonBar>
@@ -148,8 +146,8 @@
          <children>
             <TableView prefHeight="200.0" prefWidth="510.0" style="-fx-border-color: #731196; -fx-background-color: ffebfe;">
               <columns>
-                <TableColumn prefWidth="41.60003590583801" text="№" />
-                <TableColumn prefWidth="108.79999923706055" text="Категория" />
+                  <TableColumn prefWidth="41.60003590583801" text="№" />
+                  <TableColumn prefWidth="108.79999923706055" text="Категория" />
                   <TableColumn prefWidth="75.0" text="Сумма" />
                   <TableColumn prefWidth="69.60002136230469" text="Дата" />
                   <TableColumn prefWidth="120.00006103515625" text="Описание" />
@@ -216,7 +214,7 @@
                   <Insets bottom="10.0" top="10.0" />
                </padding>
             </Button>
-      <Button fx:id="thirdyButton" text="Назад" onAction="#switchToPrimary"/>
+      <Button fx:id="thirdyButton" onAction="#switchToPrimary" text="Назад" />
 
          </children>
       </HBox>

@@ -3,8 +3,12 @@ package km;
 import java.io.IOException;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 
 public class Controller {
+    
+    @FXML
+    private Button secondaryButton;
 
     @FXML
     private void switchToPrimary() throws IOException {
