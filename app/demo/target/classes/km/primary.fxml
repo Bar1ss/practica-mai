@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,14 +20,34 @@
    <children>
       <ButtonBar accessibleRole="TEXT">
          <buttons>
-            <ImageView id="Setting-1" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+            <Button id="primaryButton" accessibleText="Ввести данные" contentDisplay="CENTER" onAction="#switchToSecondary"
+            mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;"
+            styleClass="Color" text="Настройки" textAlignment="CENTER" textFill="#731196">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </Button>
+            <ImageView id="Setting-1" accessibleRole="BUTTON" fitHeight="41.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                <image>
                   <Image url="@../../picturies/Setting.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
             </ImageView>
+
          </buttons>
       </ButtonBar>
       <HBox alignment="CENTER" VBox.vgrow="NEVER">
@@ -36,82 +59,121 @@
             </Text>
          </children>
       </HBox>
-      <HBox alignment="CENTER" prefWidth="120.0">
+      <HBox alignment="CENTER">
          <children>
-            <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Категория" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
+            <VBox>
+               <children>
+                  <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Категория" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextArea prefHeight="39.0" prefWidth="120.0" promptText="Введите категорию" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextArea>
+               </children>
                <HBox.margin>
-                  <Insets right="100.0" />
+                  <Insets right="20.0" />
                </HBox.margin>
-            </Text>
-            <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
+            </VBox>
+            <VBox>
+               <children>
+                  <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextArea prefHeight="39.0" prefWidth="120.0" promptText="Введите сумму" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextArea>
+               </children>
                <HBox.margin>
-                  <Insets right="100.0" />
+                  <Insets right="20.0" />
                </HBox.margin>
-            </Text>
-            <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
+            </VBox>
+            <VBox>
+               <children>
+                  <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <DatePicker prefHeight="39.0" prefWidth="120.0" />
+               </children>
                <HBox.margin>
-                  <Insets right="100.0" />
+                  <Insets right="20.0" />
                </HBox.margin>
-            </Text>
-            <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Описание" textAlignment="CENTER">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-            </Text>
+            </VBox>
+            <VBox>
+               <children>
+                  <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Описание" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </Text>
+                  <TextArea prefHeight="39.0" prefWidth="120.0" promptText="Введите описание" wrapText="true">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextArea>
+               </children>
+            </VBox>
          </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
       </HBox>
       <HBox alignment="CENTER">
          <children>
-            <TextArea prefHeight="39.0" prefWidth="120.0" promptText="Введите категорию" wrapText="true">
+            <TableView prefHeight="200.0" prefWidth="510.0" style="-fx-border-color: #731196; -fx-background-color: ffebfe;">
+              <columns>
+                <TableColumn prefWidth="41.60003590583801" text="№" />
+                <TableColumn prefWidth="108.79999923706055" text="Категория" />
+                  <TableColumn prefWidth="75.0" text="Сумма" />
+                  <TableColumn prefWidth="69.60002136230469" text="Дата" />
+                  <TableColumn prefWidth="120.00006103515625" text="Описание" />
+                  <TableColumn prefWidth="90.4000305175781" />
+              </columns>
+            </TableView>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма расходов:">
                <font>
-                  <Font name="Arial" size="14.0" />
+                  <Font name="Arial Italic" size="16.0" />
                </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
-            </TextArea>
-            <TextArea prefHeight="39.0" prefWidth="120.0" promptText="Введите сумму" wrapText="true">
+            </Text>
+            <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Тут будет сумма" textAlignment="RIGHT">
                <font>
-                  <Font name="Arial" size="14.0" />
+                  <Font name="Arial Black" size="14.0" />
                </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
                <HBox.margin>
-                  <Insets right="10.0" />
+                  <Insets left="50.0" />
                </HBox.margin>
-            </TextArea>
-            <DatePicker prefWidth="120.0">
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
-            </DatePicker>
-            <TextArea prefHeight="39.0" prefWidth="120.0" promptText="Введите описание" wrapText="true">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </TextArea>
+            </Text>
          </children>
       </HBox>
       <HBox alignment="CENTER" prefHeight="42.0" prefWidth="274.0">
