@@ -7,9 +7,11 @@ import javafx.fxml.FXML;
 public class Controller {
 
     @FXML
-    private void switchToPrimary() throws IOException {
-        App.setRoot("primary");
+    private void switchToSecondary() throws IOException {
+        App.setRoot("secondary");
     }
+}
+    /*
     @FXML
     private void switchToSecondary() throws IOException {
         App.setRoot("secondary");
@@ -19,3 +21,4 @@ public class Controller {
         App.setRoot("thirdy");
     }
 }
+ */

@@ -20,9 +20,9 @@
    <children>
       <ButtonBar accessibleRole="TEXT">
          <buttons>
-            <Button id="primaryButton" accessibleText="Ввести данные" contentDisplay="CENTER" onAction="#switchToSecondary"
+            <Button fx:id="primaryButton" text="Настройки" contentDisplay="CENTER" onAction="#switchToSecondary"
             mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;"
-            styleClass="Color" text="Настройки" textAlignment="CENTER" textFill="#731196">
+            styleClass="Color"  textAlignment="CENTER" textFill="#731196">
                <font>
                   <Font name="Arial" size="14.0" />
                </font>
@@ -47,7 +47,6 @@
                   <Rectangle2D />
                </viewport>
             </ImageView>
-
          </buttons>
       </ButtonBar>
       <HBox alignment="CENTER" VBox.vgrow="NEVER">
