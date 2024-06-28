@@ -57,7 +57,7 @@
             </Text>
          </children>
       </HBox>
-      <HBox>
+      <HBox alignment="CENTER">
          <children>
             <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Фильтр">
                <font>
