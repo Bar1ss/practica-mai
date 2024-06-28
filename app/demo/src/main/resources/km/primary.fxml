@@ -1,14 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="km.Controller">
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: f1e3ff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="km.Controller">
     <children>
-        <Label text="AAAAAAAA" />
-      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Запуск" />
+        <Label text="Нажми, чтобы начать^-^" textAlignment="CENTER" textFill="#731196">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font></Label>
+      <Button fx:id="primaryButton" alignment="CENTER" contentDisplay="CENTER" onAction="#switchToSecondary" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;" text="Запуск" textAlignment="CENTER" textFill="#731196">
+         <font>
+            <Font name="Arial" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
     </children>
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
