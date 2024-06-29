@@ -28,7 +28,7 @@ public class App extends Application {
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
         stage.setTitle("Учёт расходов");
-        Image anotherIcon = new Image("file:https://github.com/Bar1ss/practica-mai1/blob/main/app/demo/src/main/picturies/%D0%A8%D0%98%D0%A8%D0%95%D0%99%20%D0%9D%D0%95%D0%A2.png");
+        Image anotherIcon = new Image("file:C:\\Users\\User\\Desktop\\Уник\\программирование\\practica-main\\app\\demo\\src\\main\\java\\km\\HavnyShishi.png");
         stage.getIcons().add(anotherIcon);
 
         stage.show();
