@@ -12,6 +12,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Orientation;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -28,10 +29,11 @@ public class App extends Application {
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
         stage.setTitle("Учёт расходов");
-        Image anotherIcon = new Image("file:C:\\Users\\User\\Desktop\\Уник\\программирование\\practica-main\\app\\demo\\src\\main\\java\\km\\HavnyShishi.png");
+        Image anotherIcon = new Image("file:C:\\Users\\User\\Desktop\\Уник\\программирование\\Практика\\practica-main\\app\\demo\\src\\main\\java\\km\\HavnyShishi.png");
         stage.getIcons().add(anotherIcon);
 
         stage.show();
+        addBase();
     }
 
     static void setRoot(String fxml) throws IOException {
@@ -58,6 +60,17 @@ public class App extends Application {
         } 
 
         launch();
+    }
+
+    private void addBase(){
+        TableController.addCost(new Adding("Продукты", "2000", "29-06-2024", "Чипсеки", 1));
+        TableController.addCost(new Adding("Детали", "2000", "29-06-2024", "шурупы", 2));
+        TableController.addCost(new Adding("Техника", "2000", "29-06-2024", "Ремонт ноутбука", 3));
+        TableController.addCost(new Adding("Продукты", "2000", "29-06-2024", "Чипсеки", 4));
+        TableController.addCost(new Adding("Продукты", "2000", "29-06-2024", "Чипсеки", 5));
+        TableController.addCost(new Adding("Техника", "2000", "29-06-2024", "Чистка ПК", 6));
+        TableController.addCost(new Adding("Техника", "2000", "29-06-2024", "Ремонт клавиатуры", 7));
+        
     }
       
 }

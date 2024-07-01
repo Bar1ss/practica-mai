@@ -10,7 +10,10 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -46,53 +49,121 @@
       </HBox>
       <HBox alignment="CENTER">
          <children>
-            <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Фильтр">
-               <font>
-                  <Font name="Arial Bold" size="14.0" />
-               </font>
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-            </Text>
-            <HBox>
+            <HBox alignment="CENTER">
                <children>
-                  <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Категория">
+                  <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Фильтр">
                      <font>
-                        <Font name="Arial Italic" size="14.0" />
+                        <Font name="Arial Bold" size="14.0" />
                      </font>
-                     <HBox.margin>
-                        <Insets right="5.0" />
-                     </HBox.margin>
-                  </Text>
-                  <ChoiceBox prefWidth="150.0">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
-                  </ChoiceBox>
-               </children>
-            </HBox>
-            <HBox>
-               <children>
-                  <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата">
-                     <font>
-                        <Font name="Arial Italic" size="14.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets right="5.0" />
-                     </HBox.margin>
                   </Text>
-                  <DatePicker />
+                  <HBox>
+                     <children>
+                        <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Категория">
+                           <font>
+                              <Font name="Arial Italic" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <ChoiceBox prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                  </HBox>
+                  <HBox>
+                     <children>
+                        <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата">
+                           <font>
+                              <Font name="Arial Italic" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <DatePicker />
+                     </children>
+                  </HBox>
                </children>
             </HBox>
          </children>
       </HBox>
-      <AnchorPane>
+      <HBox alignment="CENTER">
          <children>
-            <HBox alignment="CENTER">
+            <AnchorPane>
                <children>
-                  <VBox>
+                  <HBox alignment="CENTER">
                      <children>
-                        <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Категория" textAlignment="CENTER">
+                        <VBox>
+                           <children>
+                              <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Категория" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <TextArea fx:id="lastNameField" prefHeight="39.0" prefWidth="120.0" promptText="Введите категорию" wrapText="true">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextArea>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <TextArea prefHeight="39.0" prefWidth="120.0" promptText="Введите сумму" wrapText="true">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextArea>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <DatePicker prefHeight="39.0" prefWidth="120.0" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <AnchorPane>
+                     <children>
+                        <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Описание" textAlignment="CENTER" AnchorPane.topAnchor="1.0">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
@@ -100,115 +171,69 @@
                               <Insets bottom="10.0" />
                            </VBox.margin>
                         </Text>
-                        <TextArea  fx:id="category" prefHeight="39.0" prefWidth="120.0" promptText="Введите категорию" wrapText="true">
+                              <AnchorPane>
+                                 <children>
+                              <TextArea prefHeight="39.0" prefWidth="170.0" promptText="Введите описание" wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="24.0">
+                                 <font>
+                                    <Font name="Arial" size="14.0" />
+                                 </font>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </TextArea>
+                                 </children>
+                              </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                     </children>
+                  </HBox>
+                  <AnchorPane layoutX="420.0" layoutY="81.0" maxWidth="1.7976931348623157E308">
+                     <children>
+                        <Button id="Button-1" accessibleText="Ввести данные" alignment="CENTER" contentDisplay="CENTER" maxHeight="41.0" maxWidth="120.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;" styleClass="Color" text="Ввести" textAlignment="CENTER" textFill="#731196" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <font>
                               <Font name="Arial" size="14.0" />
                            </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
-                        </TextArea>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </Button>
                      </children>
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox>
-                     <children>
-                        <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма" textAlignment="CENTER">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <TextArea fx:id="sum" prefHeight="39.0" prefWidth="120.0" promptText="Введите сумму" wrapText="true">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </TextArea>
-                     </children>
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox>
-                     <children>
-                        <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата" textAlignment="CENTER">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <DatePicker fx:id="date" prefHeight="39.0" prefWidth="120.0" />
-                     </children>
-                     <HBox.margin>
-                        <Insets right="20.0" />
-                     </HBox.margin>
-                  </VBox>
-                  <VBox>
-                     <children>
-                        <Text fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Описание" textAlignment="CENTER">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Text>
-                        <TextArea fx:id="description" prefHeight="39.0" prefWidth="120.0" promptText="Введите описание" wrapText="true">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </TextArea>
-                     </children>
-                  </VBox>
-               </children>
-            </HBox>
-            <AnchorPane layoutX="420.0" layoutY="81.0" maxWidth="1.7976931348623157E308">
-               <children>
-                  <Button fx:id="ok" accessibleText="Ввести данные" alignment="CENTER" contentDisplay="CENTER" maxHeight="41.0" maxWidth="120.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;" styleClass="Color" text="Ввести" textAlignment="CENTER" textFill="#731196" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <font>
-                        <Font name="Arial" size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                     <padding>
-                        <Insets bottom="10.0" top="10.0" />
-                     </padding>
-                  </Button>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </children>
-      </AnchorPane>
+      </HBox>
       <HBox alignment="CENTER">
          <children>
-            <TableView prefHeight="200.0" prefWidth="510.0" style="-fx-border-color: #731196; -fx-background-color: ffebfe;">
-              <columns>
-                <TableColumn prefWidth="41.60003590583801" text="№" />
-                <TableColumn prefWidth="108.79999923706055" text="Категория" />
-                  <TableColumn prefWidth="75.0" text="Сумма" />
-                  <TableColumn prefWidth="69.60002136230469" text="Дата" />
-                  <TableColumn prefWidth="120.00006103515625" text="Описание" />
-                  <TableColumn prefWidth="90.4000305175781" />
-              </columns>
+            <GridPane prefHeight="358.0" prefWidth="1022.0">
                <HBox.margin>
                   <Insets top="20.0" />
                </HBox.margin>
-            </TableView>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <TableView prefHeight="200.0" prefWidth="510.0" style="-fx-border-color: #731196; -fx-background-color: ffebfe;">
+                    <columns>
+                      <TableColumn prefWidth="41.60003590583801" text="№" />
+                      <TableColumn prefWidth="108.79999923706055" text="Категория" />
+                        <TableColumn prefWidth="75.0" text="Сумма" />
+                        <TableColumn prefWidth="69.60002136230469" text="Дата" />
+                        <TableColumn prefWidth="120.00006103515625" text="Описание" />
+                        <TableColumn prefWidth="90.4000305175781" />
+                    </columns>
+                  </TableView>
+               </children>
+            </GridPane>
          </children>
       </HBox>
       <HBox alignment="CENTER">
