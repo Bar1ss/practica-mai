@@ -8,8 +8,6 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -103,122 +101,6 @@
       </HBox>
       <HBox alignment="CENTER">
          <children>
-            <AnchorPane>
-               <children>
-                  <HBox alignment="CENTER">
-                     <children>
-                        <VBox>
-                           <children>
-                              <Text fx:id="text" fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Категория" textAlignment="CENTER">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Text>
-                              <TextArea fx:id="lastNameField" prefHeight="39.0" prefWidth="120.0" promptText="Введите категорию" wrapText="true">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                              </TextArea>
-                           </children>
-                           <HBox.margin>
-                              <Insets right="20.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <VBox>
-                           <children>
-                              <Text fx:id="text" fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма" textAlignment="CENTER">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Text>
-                              <TextArea prefHeight="39.0" prefWidth="120.0" promptText="Введите сумму" wrapText="true">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                              </TextArea>
-                           </children>
-                           <HBox.margin>
-                              <Insets right="20.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <VBox>
-                           <children>
-                              <Text fx:id="text" fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата" textAlignment="CENTER">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" />
-                                 </VBox.margin>
-                              </Text>
-                              <DatePicker prefHeight="39.0" prefWidth="120.0" />
-                           </children>
-                           <HBox.margin>
-                              <Insets right="20.0" />
-                           </HBox.margin>
-                        </VBox>
-                        <AnchorPane>
-                     <children>
-                        <Text fx:id="text" fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Описание" textAlignment="CENTER" AnchorPane.topAnchor="1.0">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="10.0" />
-                           </VBox.margin>
-                        </Text>
-                              <AnchorPane>
-                                 <children>
-                              <TextArea prefHeight="39.0" prefWidth="170.0" promptText="Введите описание" wrapText="true" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="24.0">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                              </TextArea>
-                                 </children>
-                              </AnchorPane>
-                     </children>
-                  </AnchorPane>
-                     </children>
-                  </HBox>
-                  <AnchorPane layoutX="420.0" layoutY="81.0" maxWidth="1.7976931348623157E308">
-                     <children>
-                        <Button fx:id="button" accessibleText="Ввести данные" alignment="CENTER" contentDisplay="CENTER" maxHeight="41.0" maxWidth="120.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;" styleClass="Color" text="Ввести" textAlignment="CENTER" textFill="#731196" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <font>
-                              <Font name="Arial" size="14.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                           <padding>
-                              <Insets bottom="10.0" top="10.0" />
-                           </padding>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-               </children>
-            </AnchorPane>
-         </children>
-      </HBox>
-      <HBox alignment="CENTER">
-         <children>
             <GridPane prefHeight="358.0" prefWidth="1022.0">
                <HBox.margin>
                   <Insets top="20.0" />
@@ -263,6 +145,20 @@
       </HBox>
       <HBox alignment="CENTER" prefHeight="42.0" prefWidth="274.0">
          <children>
+            <Button fx:id="button1" accessibleText="Ввести данные" alignment="CENTER" contentDisplay="CENTER" maxHeight="41.0" maxWidth="120.0" mnemonicParsing="false" onAction="#switchToFourty" prefHeight="41.0" prefWidth="120.0" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;" styleClass="Color" text="Ввести" textAlignment="CENTER" textFill="#731196">
+               <font>
+                  <Font name="Arial" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </Button>
             <Button fx:id="button" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="41.0" prefWidth="120.0" style="-fx-border-color: fff; -fx-background-color: fbf7ff; -fx-max-width: 200;" styleClass="Color" text="Редактировать" textAlignment="CENTER" textFill="#731196">
                <font>
                   <Font name="Arial" size="14.0" />

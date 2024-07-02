@@ -56,7 +56,7 @@ public class TableController {
             info.getScene().getWindow().hide();
             //ClientCardController.setCustomer(personTable.getSelectionModel().getSelectedItem());
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("Cost.fxml"));
+            loader.setLocation(getClass().getResource("cost_accounting.fxml"));
             try {
                 loader.load();
             } catch (IOException e) {
@@ -64,7 +64,7 @@ public class TableController {
             }
             Parent root = loader.getRoot();
             Stage stage = new Stage();
-            stage.setTitle("Информация расходах");
+            stage.setTitle("Информация о расходах");
             stage.setScene(new Scene(root));
             stage.setResizable(false);
             stage.show();
