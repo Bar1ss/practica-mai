@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="111.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: f1e3ff;" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="km.Controller">
+<VBox fx:id="background" alignment="CENTER" prefHeight="111.0" prefWidth="400.0" spacing="20.0" style="-fx-background-color: f1e3ff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="km.Controller">
     <children>
       <HBox>
          <children>
@@ -24,11 +24,7 @@
          </children>
       </HBox>
       <HBox alignment="CENTER"> 
-
-
-
-
-      
+     
          <children>
             <Label contentDisplay="CENTER" text="Тема:" textFill="#731196">
                <font>
@@ -38,22 +34,14 @@
                   <Insets right="15.0" />
                </padding>
             </Label>
-            <RadioButton contentDisplay="CENTER" mnemonicParsing="false" text="Светлая" textFill="#731196">
+            <Button contentDisplay="CENTER" onAction="#switchTheme" mnemonicParsing="false" prefHeight="31.0" prefWidth="109.0" style="-fx-max-width: 200; -fx-background-color: fbf7ff; -fx-border-color: fff;" text="Сменить тему" textAlignment="CENTER" textFill="#731196">
                <font>
-                  <Font name="Arial" size="14.0" />
+                  <Font size="14.0" />
                </font>
-               <padding>
-                  <Insets right="15.0" />
-               </padding>
-            </RadioButton>
-            <RadioButton contentDisplay="CENTER" mnemonicParsing="false" text="Темная" textFill="#731196">
-               <font>
-                  <Font name="Arial" size="14.0" />
-               </font>
-               <padding>
-                  <Insets right="15.0" />
-               </padding>
-            </RadioButton>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </HBox>
       <HBox>
