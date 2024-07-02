@@ -83,56 +83,5 @@ public class Controller {
     }
 
 
-    /* Ввод */
-
-
-    @FXML
-    private DatePicker picker;
-
-    @FXML
-    private TextArea notes;
-
-    private Map<LocalDate, String> data = new HashMap<>();
-    
-    public void initialize() {
-        load();
-        picker.setValue(LocalDate.now());
-
-        picker.valueProperty().addListener((o, oldDate, date) -> {
-            notes.setText(data.getOrDefault(date, "2024-07-02"));
-        });
-
-    }
-
-       private void load() {
-        Path file = Paths.get("notes.data");
-
-        if (Files.exists(file)) {
-            try (ObjectInputStream stream = new ObjectInputStream(Files.newInputStream(file))) {
-                data = (Map<LocalDate, String>) stream.readObject();
-                System.out.println("Loaded!");
-            } catch (Exception e) {
-                System.out.println("Failed to load: " + e);
-            }
-        }
-    }
-
-    public void updateNotes() {
-        data.put(picker.getValue(), notes.getText());
-    }
-
-    public void exit() {
-        save();
-        Platform.exit();
-    }
-
-      private void save() {
-        try (ObjectOutputStream stream = new ObjectOutputStream(Files.newOutputStream(Paths.get("notes.data")))) {
-            stream.writeObject(data);
-            System.out.println("Saved!");
-        } catch (Exception e) {
-            System.out.println("Failed to save: " + e);
-        }
-    }
 }
  
