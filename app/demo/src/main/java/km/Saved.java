@@ -39,7 +39,7 @@ public class Saved {
 
         picker.setValue(LocalDate.now());
 
-        picker.valueProperty().addListener((o, oldDate, date) -> {
+        picker.valueProperty().addListener((date) -> {
             category.setText(data.getOrDefault(date, "Данные отсутствуют"));
             sum.setText(data.getOrDefault(date, "Данные отсутствуют"));
             description.setText(data.getOrDefault(date, "Данные отсутствуют"));
@@ -47,7 +47,7 @@ public class Saved {
 
     }
 
-       private void load() {
+    private void load() {
         Path file = Paths.get("TableAdd.data");
 
         if (Files.exists(file)) {

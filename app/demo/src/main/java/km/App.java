@@ -38,10 +38,10 @@ public class App extends Application {
          TextField textField = new TextField();
         Button saveButton = new Button("Save Data");
 
-        saveButton.setOnAction(e -> {
-            String data = textField.getText();
-            saveDataToFile(data);
-        });
+        // saveButton.setOnAction(e -> {
+        //     String data = textField.getText();
+        //     saveDataToFile(data);
+        // });
 
         VBox root = new VBox(10, textField, saveButton);
         Scene scene = new Scene(root, 300, 200);
@@ -50,14 +50,14 @@ public class App extends Application {
       //  addBase();
     }
 
-    private void saveDataToFile(String data) {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("saved_data.txt"))) {
-            writer.write(data);
-            System.out.println("Data saved successfully!");
-        } catch (IOException e) {
-            System.err.println("Error saving data: " + e.getMessage());
-        }
-    }
+    // private void saveDataToFile(String data) {
+    //     try (BufferedWriter writer = new BufferedWriter(new FileWriter("TableAdd.txt"))) {
+    //         writer.write(data);
+    //         System.out.println("Data saved successfully!");
+    //     } catch (IOException e) {
+    //         System.err.println("Error saving data: " + e.getMessage());
+    //     }
+    // }
     static void setRoot(String fxml) throws IOException {
         scene.setRoot(loadFXML(fxml));
     }
