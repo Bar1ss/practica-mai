@@ -1,5 +1,7 @@
 package km;
 
+import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -20,8 +22,9 @@ public class Saved {
     private void switchToSecondary() throws IOException {
         App.setRoot("cost_accounting");
     }
-    /* Ввод */
 
+
+    /* Ввод */
 
     @FXML
     private DatePicker picker;
@@ -64,7 +67,21 @@ public class Saved {
         data.put(picker.getValue(), category.getText());
         data.put(picker.getValue(), sum.getText());
         data.put(picker.getValue(), description.getText());
-    }
+        try {
+            switchToSecondary();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        LocalDate pickerText = picker.getValue();
+        String categoryText = category.getText();
+        String sumText = sum.getText();
+        String descriptionText = description.getText();
+        System.out.println(pickerText + " - " + categoryText + " - " + sumText + " - " + descriptionText);
+        save();
+
+}
+    
 
     public void exit() {
         save();
@@ -72,11 +89,47 @@ public class Saved {
     }
 
       private void save() {
-        try (ObjectOutputStream stream = new ObjectOutputStream(Files.newOutputStream(Paths.get("TableAdd.data")))) {
-            stream.writeObject(data);
-            System.out.println("Saved!");
-        } catch (Exception e) {
-            System.out.println("Failed to save: " + e);
+        // try (ObjectOutputStream stream = new ObjectOutputStream(Files.newOutputStream(Paths.get("TableAdd.data")))) {
+            LocalDate pickerText = picker.getValue();
+            String categoryText = category.getText();
+            String sumText = sum.getText();
+            String descriptionText = description.getText();
+
+        //     stream.writeObject(categoryText);
+        //     System.out.println("Saved!");
+        // } catch (Exception e) {
+        //     System.out.println("Failed to save: " + e);
+        // }
+           try (FileOutputStream out = new FileOutputStream("TableAdd.txt"); 
+                BufferedOutputStream bos = new BufferedOutputStream(out))
+        {
+            // перевод строки в байты
+            LocalDate bufferpicker = pickerText;
+            //bos.write(bufferpicker, 0, bufferpicker.length);
+            byte[] buffercategory = categoryText.getBytes();
+            bos.write(buffercategory, 0, buffercategory.length);
+            byte[] buffersum = sumText.getBytes();
+            bos.write(buffersum, 0, buffersum.length);
+            byte[] bufferdescription = descriptionText.getBytes();
+            bos.write(bufferdescription, 0, bufferdescription.length);
         }
+        catch(IOException ex){
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void record() {
+        // String categoryText = tt; // строка для записи
+        // try(FileOutputStream out=new FileOutputStream("TableAdd.txt"); 
+        //         BufferedOutputStream bos = new BufferedOutputStream(out))
+        // {
+        //     // перевод строки в байты
+        //     byte[] buffer = categoryText.getBytes();
+        //     bos.write(buffer, 0, buffer.length);
+        // }
+        // catch(IOException ex){
+             
+        //     System.out.println(ex.getMessage());
+        // }
     }
 }
