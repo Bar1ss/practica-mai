@@ -1,21 +1,21 @@
 package km;
 
-import java.io.BufferedOutputStream;
-import java.io.BufferedWriter;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
+//import java.io.BufferedOutputStream;
+//import java.io.BufferedWriter;
+//import java.io.FileOutputStream;
+//import java.io.FileWriter;
 import java.io.IOException;
 
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+//import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.layout.FlowPane;
+//import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Orientation;
-import javafx.scene.layout.AnchorPane;
+//import javafx.geometry.Orientation;
+//import javafx.scene.layout.AnchorPane;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -28,7 +28,7 @@ public class App extends Application {
     private static Scene scene;
 
     @Override
-    public void start(Stage stage) throws IOException { //окно ff
+    public void start(@SuppressWarnings("exports") Stage stage) throws IOException { //окно ff
         scene = new Scene(loadFXML("primary"), 640, 480);
         stage.setScene(scene);
         stage.setTitle("Учёт расходов");
@@ -44,6 +44,7 @@ public class App extends Application {
         // });
 
         VBox root = new VBox(10, textField, saveButton);
+        @SuppressWarnings("unused")
         Scene scene = new Scene(root, 300, 200);
 
         stage.show();

@@ -6,6 +6,8 @@
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -16,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox fx:id="background" alignment="BASELINE_LEFT" spacing="20.0" style="-fx-background-color: f1e3ff;" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="km.Controller">
+<VBox fx:id="background" alignment="BASELINE_LEFT" spacing="20.0" style="-fx-background-color: f1e3ff;" xmlns="http://javafx.com/javafx/13" xmlns:fx="http://javafx.com/fxml/1" fx:controller="km.TableController">
    <children>
       <ButtonBar accessibleRole="TEXT">
          <buttons>
@@ -114,18 +116,19 @@
                <children>
                   <TableView fx:id="table" prefHeight="200.0" prefWidth="510.0" style="-fx-border-color: #731196; -fx-background-color: ffebfe;">
                     <columns>
-                      <TableColumn prefWidth="41.60003590583801" text="№" />
-                      <TableColumn prefWidth="108.79999923706055" text="Категория" />
-                        <TableColumn prefWidth="75.0" text="Сумма" />
-                        <TableColumn prefWidth="69.60002136230469" text="Дата" />
-                        <TableColumn prefWidth="120.00006103515625" text="Описание" />
-                        <TableColumn prefWidth="90.4000305175781" />
+                        <!-- <TableColumn prefWidth="41.60003590583801" text="№"> -->
+                        <TableColumn fx:id="categoryColumn" prefWidth="108.79999923706055" text="Категория" />
+                        <TableColumn fx:id="sumColumn" prefWidth="75.0" text="Сумма" />
+                        <TableColumn fx:id="dateColumn" prefWidth="69.60002136230469" text="Дата" />
+                        <TableColumn fx:id="descriptionColumn" prefWidth="120.00006103515625" text="Описание" />
+                        <!-- <TableColumn prefWidth="90.4000305175781" /> -->
                     </columns>
                   </TableView>
                </children>
             </GridPane>
          </children>
       </HBox>
+      <ListView prefHeight="200.0" prefWidth="200.0" />
       <HBox alignment="CENTER">
          <children>
             <Text fx:id="text" fill="#731196" strokeType="OUTSIDE" strokeWidth="0.0" text="Сумма расходов:">

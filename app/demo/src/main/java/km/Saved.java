@@ -2,9 +2,10 @@ package km;
 
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
+//import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+//import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -50,8 +51,9 @@ public class Saved {
 
     }
 
+    @SuppressWarnings("unchecked")
     private void load() {
-        Path file = Paths.get("TableAdd.data");
+        Path file = Paths.get("C:\\Users\\User\\Desktop\\Уник\\программирование\\Практика\\practica-main\\TableAdd.txt");
 
         if (Files.exists(file)) {
             try (ObjectInputStream stream = new ObjectInputStream(Files.newInputStream(file))) {
@@ -90,10 +92,10 @@ public class Saved {
 
       private void save() {
         // try (ObjectOutputStream stream = new ObjectOutputStream(Files.newOutputStream(Paths.get("TableAdd.data")))) {
-            LocalDate pickerText = picker.getValue();
-            String categoryText = category.getText();
-            String sumText = sum.getText();
-            String descriptionText = description.getText();
+        //  LocalDate pickerText = picker.getValue();
+            String categoryText = category.getText() + "\n";
+            String sumText = sum.getText() + "\n";
+            String descriptionText = description.getText() + "\n";
 
         //     stream.writeObject(categoryText);
         //     System.out.println("Saved!");
@@ -104,8 +106,8 @@ public class Saved {
                 BufferedOutputStream bos = new BufferedOutputStream(out))
         {
             // перевод строки в байты
-            LocalDate bufferpicker = pickerText;
-            //bos.write(bufferpicker, 0, bufferpicker.length);
+            // LocalDate bufferpicker = pickerText;
+            // bos.write(bufferpicker, 0, bufferpicker.length);
             byte[] buffercategory = categoryText.getBytes();
             bos.write(buffercategory, 0, buffercategory.length);
             byte[] buffersum = sumText.getBytes();
