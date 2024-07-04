@@ -2,10 +2,8 @@ package km;
 
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
-//import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-//import java.io.ObjectOutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -91,22 +89,15 @@ public class Saved {
     }
 
       private void save() {
-        // try (ObjectOutputStream stream = new ObjectOutputStream(Files.newOutputStream(Paths.get("TableAdd.data")))) {
-        //  LocalDate pickerText = picker.getValue();
             String categoryText = category.getText() + "\n";
             String sumText = sum.getText() + "\n";
             String descriptionText = description.getText() + "\n";
 
-        //     stream.writeObject(categoryText);
-        //     System.out.println("Saved!");
-        // } catch (Exception e) {
-        //     System.out.println("Failed to save: " + e);
-        // }
            try (FileOutputStream out = new FileOutputStream("TableAdd.txt"); 
                 BufferedOutputStream bos = new BufferedOutputStream(out))
         {
             // перевод строки в байты
-            // LocalDate bufferpicker = pickerText;
+            // LocalDate bufferpicker = pickerText; //не работает
             // bos.write(bufferpicker, 0, bufferpicker.length);
             byte[] buffercategory = categoryText.getBytes();
             bos.write(buffercategory, 0, buffercategory.length);
@@ -120,18 +111,4 @@ public class Saved {
         }
     }
 
-    public void record() {
-        // String categoryText = tt; // строка для записи
-        // try(FileOutputStream out=new FileOutputStream("TableAdd.txt"); 
-        //         BufferedOutputStream bos = new BufferedOutputStream(out))
-        // {
-        //     // перевод строки в байты
-        //     byte[] buffer = categoryText.getBytes();
-        //     bos.write(buffer, 0, buffer.length);
-        // }
-        // catch(IOException ex){
-             
-        //     System.out.println(ex.getMessage());
-        // }
-    }
 }

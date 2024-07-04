@@ -1,22 +1,19 @@
 package km;
-
+/* Фаил для ввода данных таблицу в коде */
 public class inf {
     private String category;
 
     private String description;
 
-    private int date;
+    private String date;
 
-    private int sum;
+    private String sum;
 
-    public inf(String category, String description, int date, int sum) {
+    public inf(String category, String description, String date, String sum) {
         this.category = category;
         this.description = description;
         this.date = date;
         this.sum = sum;
-    }
-
-    public inf() {
     }
 
     public String getCategory() {
@@ -35,19 +32,19 @@ public class inf {
         this.description = description;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int password) {
-     //   this.date = date;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public int getSum() {
+    public String getSum() {
         return sum;
     }
 
-    public void setSum(int sum) {
+    public void setSum(String sum) {
         this.sum = sum;
     }
 }
